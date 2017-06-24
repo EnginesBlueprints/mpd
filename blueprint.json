@@ -26,7 +26,8 @@
       "license": {
         "label": "GPL v3"
       }
-    }
+    },
+    "timestamp": "2017-06-25T09:48:40+10:00"
   },
   "software": {
     "base": {
@@ -49,7 +50,7 @@
     "scripts": {
       "start": {
         "language": "sh",
-        "content": "#!/bin/bash\r\n\r\n mpd --no-daemon /home/app/mpd.conf &\r\ntouch /engines/var/run/flags/startup_complete\r\nPID_FILE=/run/engines/pid\r\nexport PID_FILE\r\n. /home/trap.sh\r\nwait\r\nrm /engines/var/run/flags/startup_complete\r\n"
+        "content": "#!/bin/bash\r\n\r\n mpd --no-daemon /home/app/mpd.conf &\r\ntouch /engines/var/run/flags/startup_complete\r\nPID_FILE=/run/engines/pid\r\nexport PID_FILE\r\n. /home/engines/functions/trap.sh\r\n\r\nwait\r\nrm /engines/var/run/flags/startup_complete\r\nexit\r\n"
       },
       "install": {
         "language": "sh",
