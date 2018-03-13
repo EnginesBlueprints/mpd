@@ -27,7 +27,7 @@
         "label": "GPL v3"
       }
     },
-    "timestamp": "2018-03-13T18:39:36+11:00"
+    "timestamp": "2018-03-13T18:44:50+11:00"
   },
   "software": {
     "base": {
@@ -50,7 +50,7 @@
     "scripts": {
       "start": {
         "language": "sh",
-        "content": "#!/bin/bash\r\n\r\nPID_FILE=/run/engines/pid\r\nexport PID_FILE\r\n. /home/engines/functions/trap.sh\r\n\r\n mpd --no-daemon /home/app/mpd.conf &\r\n\r\nstartup_complete\r\n\r\nwait\r\nshutdown_complete\r\nexit\r\n"
+        "content": "#!/bin/bash\r\n\r\nPID_FILE=/run/engines/pid\r\nexport PID_FILE\r\n. /home/engines/functions/trap.sh\r\n\r\nif ! test -d /home/fs/mpd/logs\r\n then\r\n  mkdir -p /home/fs/mpd/playlists\r\n  touch /home/fs/mpd/tag_cache\r\n  mkdir -p /home/fs/mpd/music\r\n  mkdir -p /home/fs/mpd/logs\r\nfi\r\n\r\nmpd --no-daemon /home/app/mpd.conf &\r\n\r\nstartup_complete\r\n\r\nwait\r\nshutdown_complete\r\nexit\r\n"
       },
       "install": {
         "language": "sh",
