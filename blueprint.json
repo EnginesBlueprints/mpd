@@ -2,8 +2,8 @@
   "schema": {
     "type": "app_blueprint",
     "version": {
-      "major": 1,
-      "minor": 0
+      "major": 0,
+      "minor": 1
     },
     "origin": "Engines Developer Studio 0.2"
   },
@@ -27,7 +27,7 @@
         "label": "GPL v3"
       }
     },
-    "timestamp": "2017-06-25T09:48:40+10:00"
+    "timestamp": "2018-03-13T18:15:30+11:00"
   },
   "software": {
     "base": {
@@ -42,8 +42,8 @@
     },
     "ports": [
       {
-        "port": 6600,
-        "external": 6600,
+        "port": "6600",
+        "external": "6600",
         "protocol": "TCP"
       }
     ],
@@ -76,7 +76,7 @@
           "engine_path": "mpd",
           "permissions": "rw",
           "volume_src": "",
-          "service_name": "_Engines_Builder(engine_name)",
+          "service_name": "music",
           "group": "_Engines_Builder(data_gid)",
           "user": "_Engines_Builder(data_uid)"
         }
